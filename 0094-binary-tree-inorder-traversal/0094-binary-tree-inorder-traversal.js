@@ -14,9 +14,6 @@ var inorderTraversal = function(root) {
     if(!root){
         return []
     }
-    const arr = []
-    arr.push(...inorderTraversal(root.left))
-    arr.push(root.val)
-    arr.push(...inorderTraversal(root.right))
-    return arr
+    
+    return [...inorderTraversal(root.left), root.val, ...inorderTraversal(root.right)]
 };
