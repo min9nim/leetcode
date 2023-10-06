@@ -14,6 +14,15 @@ var sortedArrayToBST = function(nums) {
     if(nums.length === 0){
         return null
     }
+    if(nums.length === 1){
+        return new TreeNode(nums[0])
+    }
+    if(nums.length === 2){
+        return new TreeNode(nums[1], new TreeNode(nums[0]))
+    }
+    if(nums.length === 3){
+        return new TreeNode(nums[1], new TreeNode(nums[0]), new TreeNode(nums[2]))
+    }
     const pivotIdx = Math.floor(nums.length/2)
     return new TreeNode(
         nums[pivotIdx],
